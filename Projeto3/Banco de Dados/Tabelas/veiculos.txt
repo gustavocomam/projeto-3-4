@@ -1,0 +1,7 @@
+CREATE TABLE `veiculos` (
+  `placa_veiculo` char(8) NOT NULL,
+  `id_cliente` varchar(11) DEFAULT NULL,
+  PRIMARY KEY (`placa_veiculo`),
+  KEY `id_cliente_idx` (`id_cliente`),
+  CONSTRAINT `id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

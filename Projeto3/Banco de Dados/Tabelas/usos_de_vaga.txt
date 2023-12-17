@@ -1,0 +1,15 @@
+CREATE TABLE `usos_de_vaga` (
+  `id_uso` int NOT NULL AUTO_INCREMENT,
+  `id_vaga` char(2) NOT NULL,
+  `nome_estacionamento` varchar(120) NOT NULL,
+  `placa_veiculo` char(8) NOT NULL,
+  `entrada` char(29) NOT NULL,
+  `saida` char(29) DEFAULT NULL,
+  PRIMARY KEY (`id_uso`),
+  KEY `id_veiculo_idx` (`placa_veiculo`),
+  KEY `id_vaga_uso_idx` (`id_vaga`),
+  KEY `nome_estacionamento_uso_idx` (`nome_estacionamento`),
+  CONSTRAINT `id_vaga_uso` FOREIGN KEY (`id_vaga`) REFERENCES `vagas` (`id_vaga`),
+  CONSTRAINT `nome_estacionamento_uso` FOREIGN KEY (`nome_estacionamento`) REFERENCES `estacionamentos` (`nome_estacionamento`),
+  CONSTRAINT `placa_veiculo_uso` FOREIGN KEY (`placa_veiculo`) REFERENCES `veiculos` (`placa_veiculo`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

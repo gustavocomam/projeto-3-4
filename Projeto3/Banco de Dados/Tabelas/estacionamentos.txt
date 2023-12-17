@@ -1,0 +1,6 @@
+CREATE TABLE `estacionamentos` (
+  `nome_estacionamento` varchar(120) NOT NULL,
+  `quantidade_fileiras` int DEFAULT NULL,
+  `vagas_por_fileira` int DEFAULT NULL,
+  PRIMARY KEY (`nome_estacionamento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

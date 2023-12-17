@@ -1,0 +1,8 @@
+CREATE TABLE `vagas` (
+  `id_vaga` char(2) NOT NULL,
+  `nome_estacionamento` varchar(120) NOT NULL,
+  `estado` tinyint NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_vaga`),
+  KEY `nome_estacionamento_vaga_idx` (`nome_estacionamento`),
+  CONSTRAINT `nome_estacionamento_vaga` FOREIGN KEY (`nome_estacionamento`) REFERENCES `estacionamentos` (`nome_estacionamento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
